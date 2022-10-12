@@ -63,5 +63,66 @@ fn_add_two <- function(num) {
 }
 
 lapply(prices, fn_add_two)
+sapply(prices, fn_add_two)
 
 ?lapply
+?sapply
+
+my_grades <- list(a1 = 87, a2 = 90, a3 = 92)
+my_grades$a2
+my_grades$a4
+my_grades$a4 <- 72
+my_grades[["a5"]] <- 99
+my_grades$a7 <- 100
+my_grades$a6 <- 80
+
+my_grades[[7]]
+
+my_grades2 <- list(
+  vec_homeworks = c(87, 90, 92, 72, 99),
+  vec_exercises = c(1, 1, 0, 1, 1, 1 ,1)
+)
+
+mean(my_grades2$vec_homeworks)
+mean(my_grades2$vec_exercises)
+
+lapply(my_grades2, mean)
+
+fn_add_two <- function(num) {
+  answer <- num + 2
+  return(answer)
+}
+
+fn_add_n <- function(num1, num2) {
+  answer <- num1 + num2
+  return(answer)
+}
+
+my_grades
+lapply(my_grades, fn_add_two)
+
+my_grades_upgraded <- lapply(my_grades, fn_add_n, 5)
+
+my_grades2_upgraded <- lapply(my_grades2, fn_add_n, 5)
+
+data_protest <- read.csv("https://countlove.org/data/data.csv")
+
+head(data_protest)
+View(data_protest)
+
+num_attendees <- data_protest$Attendees
+
+num_attendees
+
+max_attendees <- max(num_attendees, na.rm = TRUE)
+max_attendees
+
+?max
+
+height <- c(58, 59, 60, 61, 62) 
+weight <- c(115, 117, 120, 123, 126)
+my_data <- data.frame(height, weight)
+my_data["height"]
+my_data$height
+my_data[["height"]]
+
